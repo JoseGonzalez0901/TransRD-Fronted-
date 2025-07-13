@@ -3,6 +3,7 @@
              xmlns:viewmodels="clr-namespace:TransRD.ViewModels"
              x:Class="TransRD.Views.RegisterPage"
              x:DataType="viewmodels:RegisterViewModel"
+             xmlns:controls="clr-namespace:TransRD.Controls"
              BackgroundColor="White"
              NavigationPage.HasNavigationBar="False">
     <ScrollView>
@@ -20,29 +21,28 @@
 
             <Frame BorderColor="Gray" CornerRadius="5" Padding="0" HasShadow="False" BackgroundColor="White">
                 <Entry Placeholder="Correo Electronico"
-                       Text="{Binding FullName}" 
+                       Text="{Binding Email}" 
                        FontAttributes="Bold" 
                        TextColor="Black"
                        HorizontalTextAlignment="Center" />
             </Frame>
 
-            <Frame BorderColor="Gray" CornerRadius="5" Padding="0" HasShadow="False" BackgroundColor="White">
-                <Entry Placeholder="Contraseña"
-                       Text="{Binding FullName}" 
-                       IsPassword="True"
-                       FontAttributes="Bold" 
-                       TextColor="Black"
-                       HorizontalTextAlignment="Center" />
-            </Frame>
-            
-            <Frame BorderColor="Gray" CornerRadius="5" Padding="0" HasShadow="False" BackgroundColor="White">
-                <Entry Placeholder="Cofirmar Contraseña"
-                       Text="{Binding FullName}" 
-                       FontAttributes="Bold" 
-                       TextColor="Black"
-                       HorizontalTextAlignment="Center" />
-            </Frame>
-             <StackLayout Orientation="Horizontal" Spacing="10">
+
+
+            <controls:PasswordEntry Placeholder="Contraseña" Password="{Binding Password, Mode=TwoWay}" />
+            <controls:PasswordEntry Placeholder=" Confirmar Contraseña" Password="{Binding ConfirmPassword, Mode=TwoWay}" />
+
+
+
+
+
+
+
+
+
+
+
+            <StackLayout Orientation="Horizontal" Spacing="10">
                 <CheckBox IsChecked="{Binding AcceptTerms}" Color="Black"/>
                 <Label Text="Acepto términos y condiciones" VerticalOptions="Center" TextColor="Black"/>
             </StackLayout>

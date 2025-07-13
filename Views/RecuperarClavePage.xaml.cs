@@ -5,5 +5,6 @@ public partial class RecuperarClavePage : ContentPage
 	public RecuperarClavePage()
 	{
 		InitializeComponent();
-	}
+        BindingContext = new ViewModels.RecuperarClaveViewModel();
+    }
 }

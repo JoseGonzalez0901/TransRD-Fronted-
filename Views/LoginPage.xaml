@@ -2,34 +2,29 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:TransRD.ViewModels"
+             xmlns:controls="clr-namespace:TransRD.Controls"
              x:Class="TransRD.Views.LoginPage"
              x:DataType="viewmodels:LoginViewModel"
+             
              BackgroundColor="White"
              NavigationPage.HasNavigationBar="False">
     <ScrollView>
         <VerticalStackLayout Padding="30" Spacing="20" Margin="0,100,0,0">
             <Image Source="logo_transrd.png" HeightRequest="200" HorizontalOptions="Center" Margin="0,25" />
-            
-
 
             <Frame BorderColor="Gray" CornerRadius="5" Padding="0" HasShadow="False" BackgroundColor="White">
-
                 <Entry Placeholder="Correo electrónico" 
                    Text="{Binding Email}" 
                    HorizontalTextAlignment="Center" 
                    Keyboard="Email" 
                    TextColor="Black"
+                   FontAttributes="Bold"
                    />
             </Frame>
 
-            <Frame BorderColor="Gray" CornerRadius="5" Padding="0" HasShadow="False" BackgroundColor="White" >
-                <Entry Placeholder="Contraseña" 
-                       Text="{Binding Password}" 
-                       HorizontalTextAlignment="Center" 
-                       IsPassword="True" 
-                       FontAttributes="Bold" 
-                       TextColor="Black" />
-            </Frame>
+            <controls:PasswordEntry Placeholder="Contraseña" Password="{Binding Password, Mode=TwoWay}" />
+
+
             <Button Text="Iniciar Sesión"
                     BackgroundColor="Black" 
                     TextColor="White" 
@@ -39,7 +34,7 @@
                     WidthRequest="120" 
                     CornerRadius="8" 
                     Margin="0,25"/>
-            
+
             <Label Text="Registrarse" TextColor="Blue" HorizontalOptions="Center">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding NavigateToRegisterCommand}" />

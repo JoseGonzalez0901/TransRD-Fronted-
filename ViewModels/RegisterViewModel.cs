@@ -24,6 +24,7 @@ namespace TransRD.ViewModels
 
         public RegisterViewModel()
         {
+            
         }
 
         [RelayCommand]
